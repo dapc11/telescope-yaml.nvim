@@ -4,6 +4,7 @@ local conf = require("telescope.config").values
 local finders = require("telescope.finders")
 local entry_display = require("telescope.pickers.entry_display")
 local make_entry = require("telescope.make_entry")
+local action_state = require("telescope.actions.state")
 
 local width = 0
 
@@ -99,13 +100,9 @@ function find()
 		.new(opts, {
 			attach_mappings = function(_, map)
 				map("i", "<c-v>", function(prompt_bufnr)
-					local action_state = require("telescope.actions.state")
-					local action_utils = require("telescope.actions.utils")
 					vim.fn.setreg("+", action_state.get_selected_entry()["value"])
 				end)
 				map("i", "<c-k>", function(prompt_bufnr)
-					local action_state = require("telescope.actions.state")
-					local action_utils = require("telescope.actions.utils")
 					vim.fn.setreg("+", action_state.get_selected_entry()["text"])
 				end)
 				return true
