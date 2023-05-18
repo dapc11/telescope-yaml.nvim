@@ -2,7 +2,7 @@ local M = {}
 
 local action_layout = require("telescope.actions.layout")
 
-function M.yaml_find(opts)
+function M.find(opts)
 	opts = opts or {}
 	local yaml_path = {}
 	local result = {}
