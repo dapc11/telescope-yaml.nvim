@@ -2,6 +2,11 @@
 
 Telescope extension for searching within YAML files. The finder comes with feature to copy the value or absolute YAML path (key).
 
+## Showcase
+
+![Telescope-yaml](./resources/yaml-find.png)
+
+
 ## Requirements
 
 - telescope.nvim (required)
