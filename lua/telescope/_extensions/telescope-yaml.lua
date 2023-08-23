@@ -101,9 +101,11 @@ function find()
 			attach_mappings = function(_, map)
 				map("i", "<c-v>", function(prompt_bufnr)
 					vim.fn.setreg("+", action_state.get_selected_entry()["value"])
+					print("Value yanked")
 				end)
 				map("i", "<c-k>", function(prompt_bufnr)
 					vim.fn.setreg("+", action_state.get_selected_entry()["text"])
+					print("Key yanked")
 				end)
 				return true
 			end,
